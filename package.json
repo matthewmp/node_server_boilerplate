@@ -4,7 +4,11 @@
   "description": "Boilerplate: Node, Express, Mongoose, Webpack",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "buildClient": "webpack --config=webpack.config.js",
+    "buildServer": "babel ./src/server -d ./dist"
+    "start:server": "nodemon ./src/server/server.js",
+    "start:dev": "webpack-dev-server",
+    "launch": "npm run buildClient && npm run buildServer && npm run start:server"
   },
   "author": "Matt Palumbo",
   "license": "ISC",
