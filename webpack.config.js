@@ -9,10 +9,14 @@ module.exports = {
 		path: path.resolve(__dirname, "./dist/client")
 	},
 	devServer: {
-		contentBase: '/src',
+		contentBase: path.resolve(__dirname, 'dist/client'),
 		port: 9000,
 		proxy: {
 			"/": "http://localhost:8888"
+		},
+		overlay: {
+			errors: true,
+			warnings: true
 		}
 	},
 	module: {

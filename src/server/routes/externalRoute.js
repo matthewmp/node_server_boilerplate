@@ -2,10 +2,11 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
-const MONDEL_VARIABLE_NAME = require(PATH_TO_MODEL_FILE);
+//const MONDEL_VARIABLE_NAME = require(PATH_TO_MODEL_FILE);
 
 router.get('/', (req, res)=>{
-
+	console.log('inside test route');
+	res.json({message: "Get Request Received!"});
 });
 
 router.post('/', (req, res)=>{

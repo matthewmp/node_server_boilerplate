@@ -11,7 +11,7 @@ const bodyParser = require('body-parser');
 
 // DB
 const mongoose = require('mongoose');
-mongoose.connect(/* ENTER MOGO CONNECTION */);
+//mongoose.connect(/* ENTER MOGO CONNECTION */);
 
 
 // Middleware
@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 
 // Routes
 // REQUIRE ROUTE 
-const NAME_OF_EXTERNAL_ROUTE = require(PATH_TO_EXTERNAL_ROUTE);
+const testRoute = require('./routes/externalRoute.js');
 
 // Cors
 app.use(function(req, res, next) {
@@ -31,9 +31,13 @@ app.use(function(req, res, next) {
 });
 
 // Static Files
-app.use(express.static(path.join(__dirname, '../dist/client')));
+// STATIC FILE FOR DIST
+//app.use(express.static(path.join(__dirname, '../../dist/client')));
 
-app.use('/PATH', EXTERNAL_ROUTER);
+// Static Files for Dev ONLY!
+app.use(express.static(path.join(__dirname, '../client')));
+
+app.use('/test', testRoute);
 
 app.use((req, res, next) => {
 	const error = new Error('Not Found');

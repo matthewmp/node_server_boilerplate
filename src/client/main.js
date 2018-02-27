@@ -1,4 +1,4 @@
 require('./index.html');
 require('./main.css');
 
-console.log('Running');
+console.log('Testing');
