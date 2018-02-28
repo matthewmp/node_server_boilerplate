@@ -5,10 +5,11 @@
   "main": "main.js",
   "scripts": {
     "buildClient": "webpack --config=webpack.config.js",
-    "buildServer": "babel ./src/server -d ./dist",
-    "start:server": "nodemon ./src/server/server.js",
+    "buildServer": "babel ./server -d ./dist",
+    "start:server-dev": "nodemon ./server/server.js",
+    "start:server-dist": "node ./dist/server.js",
     "start:dev": "webpack-dev-server",
-    "launch": "npm run buildClient && npm run buildServer && npm run start:server"
+    "launch": "npm run buildClient && npm run buildServer && npm run start:server-dist"
   },
   "author": "Matt Palumbo",
   "license": "ISC",
