@@ -32,10 +32,7 @@ app.use(function(req, res, next) {
 
 // Static Files
 // STATIC FILE FOR DIST
-//app.use(express.static(path.join(__dirname, '../../dist/client')));
-
-// Static Files for Dev ONLY!
-app.use(express.static(path.join(__dirname, '../client')));
+app.use(express.static(path.join(__dirname, '../../dist/client')));
 
 app.use('/test', testRoute);
 
